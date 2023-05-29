@@ -215,6 +215,7 @@ function extractEmails(str) {
  */
 function getRectangleString(/* width, height */) {
   throw new Error('Not implemented');
+  // TODO
 }
 // console.log(getRectangleString(6,4));
 
@@ -234,9 +235,9 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(str) {
+function encodeToRot13(/* str */) {
   throw new Error('Not implemented');
-  // TODO 
+  // TODO
   // const init = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   // const final = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
   // let res = '';
