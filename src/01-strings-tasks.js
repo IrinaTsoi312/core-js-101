@@ -213,9 +213,13 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
-  // TODO
+function getRectangleString(width, height) {
+  // throw new Error('Not implemented');
+  const line = '─'.repeat(width - 2);
+  const top = `┌${line}┐\n`;
+  const middle = `│${' '.repeat(width - 2)}│\n`;
+  const bottom = `└${line}┘\n`;
+  return `${top}${middle.repeat(height - 2)}${bottom}`;
 }
 // console.log(getRectangleString(6,4));
 
@@ -260,13 +264,10 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
-  // TODO
-  // const str = value;
-  // return str.hasOwnProperty('split');
+function isString(value) {
+  // throw new Error('Not implemented');
+  return typeof value === 'string' || value instanceof String;
 }
-// console.log(isString(new String('test')));
 
 /**
  * Returns playid card id.
