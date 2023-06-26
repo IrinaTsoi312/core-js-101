@@ -292,19 +292,14 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
-  // TODO
-  // if (arr.length === 0) {
-  //   return [];
-  // } else {
-  //   return arr.map((elem) => {
-  //     index = arr.indexOf(elem);
-
-  //   });
-  // }
+function propagateItemsByPositionIndex(arr) {
+  // throw new Error('Not implemented');
+  if (arr.length === 0) {
+    return [];
+  }
+  const res = arr.map((elem, index) => Array(index + 1).fill(elem));
+  return res.flat(1);
 }
-
 
 /**
  * Returns the 3 largest numbers from the specified array
@@ -474,9 +469,14 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-// ! TODO
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  // throw new Error('Not implemented');
+  return arr.sort((a, b) => {
+    if (a.country === b.country) {
+      return a.city.localeCompare(b.city);
+    }
+    return a.country.localeCompare(b.country);
+  });
   // return arr.sort((a, b) => {
   //   if (a.country === b.country) {
   //     return a.country < b.city ? -1 : 1;
